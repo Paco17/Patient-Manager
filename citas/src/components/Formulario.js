@@ -12,6 +12,8 @@ const Formulario = ()=> {
 
     });
 
+    const[error, updateError] = useState(false);
+
     //Función que se ejecuta cuando el usuario actualiza el input
     const actualizaState = e => {
        actualizaConsulta({
@@ -27,7 +29,21 @@ const Formulario = ()=> {
     const submitConsulta = e => {
         e.preventDefault();
         
-        console.log('Enviando...')
+        //toDO
+            // 1er Paso es validar
+
+            //Asignar ID
+
+            //CrearConsulta
+
+            //Reiniciar un form
+        
+        //Validación  
+        if(paciente.trim()===''||doctor.trim()==='' ||
+           fecha.trim()===''||hora.trim()===''||motivo.trim()===''){
+           updateError(true);
+            return;
+        }
     };
     
 
@@ -35,6 +51,8 @@ const Formulario = ()=> {
         <Fragment>
             <h2>Crear Consulta</h2>
             
+            {error ? <p className="alerta-error">Todos los campos son obligatorios</p>: null}
+
             <form
                 onSubmit={submitConsulta}
             >
