@@ -10,7 +10,6 @@ const Formulario = ({crearConsulta})=> {
         fecha: '',
         hora: '',
         motivo: ''
-
     });
 
     const[error, updateError] = useState(false);
@@ -30,15 +29,6 @@ const Formulario = ({crearConsulta})=> {
     const submitConsulta = e => {
         e.preventDefault();
         
-        //toDO
-            // 1er Paso es validar
-
-            //Asignar ID
-
-            //CrearConsulta
-
-            //Reiniciar un form
-        
         //Validación  
         if(paciente.trim()===''||doctor.trim()==='' ||
            fecha.trim()===''||hora.trim()===''||motivo.trim()===''){
@@ -55,8 +45,15 @@ const Formulario = ({crearConsulta})=> {
         //Crear consulta
         crearConsulta(consulta);
 
-
-    };
+        //Reiniciar form
+        actualizaConsulta({
+            paciente: '',
+            doctor:  '',
+            fecha: '',
+            hora: '',
+            motivo: ''
+        })
+    }
     
 
     return (
