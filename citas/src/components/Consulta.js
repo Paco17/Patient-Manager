@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Consulta = ({consulta}) => (
+const Consulta = ({consulta, eliminarConsulta}) => (
    
     <div className = "consulta">
         <p>Paciente: <span/>{consulta.paciente}</p>
@@ -8,6 +8,11 @@ const Consulta = ({consulta}) => (
         <p>Fecha: <span/>{consulta.fecha}</p>
         <p>Hora: <span/>{consulta.hora}</p>
         <p>Motivo: <span/>{consulta.motivo}</p>
+
+        <button
+            className = "button eliminar u-full-width"
+            onClick = {()=> eliminarConsulta(consulta.id)}
+        >Eliminar &times;</button>
     </div>
 );
 

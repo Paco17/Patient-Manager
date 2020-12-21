@@ -15,6 +15,12 @@ function App() {
     ]);
   }
 
+  //Función Eliminar consulta
+  const eliminarConsulta = id => {
+    const nuevasConsultas  = consultas.filter(consulta => consulta.id !== id);
+    guardarConsultas(nuevasConsultas);
+  }
+
   return (
     <Fragment>
         <h1>Administrador de Pacientes</h1>
@@ -32,6 +38,7 @@ function App() {
                 <Consulta
                   id = {consulta.id}
                   consulta = {consulta}
+                  eliminarConsulta = {eliminarConsulta}
                 />
               ))}
             </div>
