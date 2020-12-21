@@ -1,6 +1,7 @@
 import React, {Fragment, useState} from 'react';
+import uuid from 'uuid/v4'
 
-const Formulario = ()=> {
+const Formulario = ({crearConsulta})=> {
 
     //Crear el State de Consultas
     const [consulta, actualizaConsulta] = useState({
@@ -44,6 +45,17 @@ const Formulario = ()=> {
            updateError(true);
             return;
         }
+
+        //Eliminar mensaje previo
+        updateError(false);
+
+        //Asignar un ID
+        consulta.id = uuid();
+
+        //Crear consulta
+        crearConsulta(consulta);
+
+
     };
     
 
