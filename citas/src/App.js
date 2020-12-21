@@ -1,5 +1,6 @@
 import React, {Fragment, useState} from 'react';
 import Formulario from './components/Formulario';
+import Consulta from './components/Consulta';
 
 function App() {
 
@@ -26,7 +27,13 @@ function App() {
               />
             </div>
             <div className = "one-half column">
-              2
+              <h2>Consultas</h2>
+              {consultas.map(consulta =>(
+                <Consulta
+                  id = {consulta.id}
+                  consulta = {consulta}
+                />
+              ))}
             </div>
           </div>
         </div>
