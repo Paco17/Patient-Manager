@@ -1,1 +1,3 @@
 # Patient-Manager
+
+ First mini project in React - still learning... 
